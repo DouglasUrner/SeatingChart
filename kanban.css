@@ -6,7 +6,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  width: 100px;
+  width: 30%;
   margin: 0 1.5%;
   background: #f0f0f0;
   border-radius: 3px;
@@ -35,14 +35,14 @@
     text-indent: -1000px;
   }
 }
-.board-column.unseated {
-  min-height: 600px;
-}
-.board-column.unseated .board-column-header {
+.board-column.todo .board-column-header {
   background: #4A9FF9;
 }
-.board-column.seated .board-column-header {
+.board-column.working .board-column-header {
   background: #f9944a;
+}
+.board-column.done .board-column-header {
+  background: #2ac06d;
 }
 .board-column-content {
   position: relative;
@@ -74,7 +74,6 @@
   -webkit-box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
   box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
 }
-
 @media (max-width: 600px) {
   .board-item-content {
     text-align: center;
