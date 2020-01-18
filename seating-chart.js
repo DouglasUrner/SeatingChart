@@ -21,7 +21,7 @@ itemContainers.forEach(function (container) {
     dragReleaseEasing: 'ease'
   })
   .on('dragStart', function (item) {
-    // Let's set fixed widht/height to the dragged item
+    // Set a fixed widht/height to the dragged item
     // so that it does not stretch unwillingly when
     // it's appended to the document body for the
     // duration of the drag.
@@ -29,7 +29,7 @@ itemContainers.forEach(function (container) {
     item.getElement().style.height = item.getHeight() + 'px';
   })
   .on('dragReleaseEnd', function (item) {
-    // Let's remove the fixed width/height from the
+    // Remove the fixed width/height from the
     // dragged item now that it is back in a grid
     // column and can freely adjust to it's
     // surroundings.
@@ -38,6 +38,7 @@ itemContainers.forEach(function (container) {
     // Just in case, let's refresh the dimensions of all items
     // in case dragging the item caused some other items to
     // be different size.
+    // XXX - don't think we need to do this.
     columnGrids.forEach(function (grid) {
       grid.refreshItems();
     });
@@ -62,7 +63,7 @@ boardGrid = new Muuri('.board', {
   dragEnabled: true,
   dragSortInterval: 0,
   dragStartPredicate: {
-    handle: '.board-column-header'
+    handle: '.board-column-header-not'
   },
   dragReleaseDuration: 400,
   dragReleaseEasing: 'ease'
