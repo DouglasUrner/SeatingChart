@@ -74,6 +74,16 @@
   -webkit-box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
   box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
 }
+.unseated .board-item-content {
+  color: red;
+  font-size: 12px;
+  height: 10px;
+  margin: 0px;
+  padding: 2px;
+}
+.seated .board-item-content {
+  color: blue;
+}
 
 @media (max-width: 600px) {
   .board-item-content {
