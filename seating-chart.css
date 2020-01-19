@@ -19,8 +19,21 @@ body {
   border-radius: 5px;
 }
 
-.unseated {
+/*
+** Page layout
+*/
+.seating-chart {
+  min-width: 1000px;
+}
+.page-header {
   width: 100%;
+}
+.buttons {
+  width: 18%;
+}
+.info-area {}
+.unseated {
+  width: 18%;
   float: left;
 }
 .seatmap {
@@ -36,17 +49,6 @@ body {
   width: 90px;
   min-height: 60px;
   margin: 8px 0 0 8px;
-  float: left;
-}
-/*
-** Page layout
-*/
-.seating-chart {
-  min-width: 1000px;
-}
-.left-sidebar {
-  width: 18%;
-  min-height: 600px;
   float: left;
 }
 .student-item {
