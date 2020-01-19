@@ -1,6 +1,9 @@
 var itemContainers = [].slice.call(document.querySelectorAll('.board-column-content'));
 var columnGrids = [];
 var boardGrid;
+var sort = document.querySelector('.sort');
+alert(sort);
+
 
 // Define the column grids so we can drag those
 // items around.
@@ -18,7 +21,13 @@ itemContainers.forEach(function (container) {
     dragSortInterval: 0,
     dragContainer: document.body,
     dragReleaseDuration: 400,
-    dragReleaseEasing: 'ease'
+    dragReleaseEasing: 'ease',
+    sortData: {
+      id: function(item, element) {
+        alert('sort data');
+        return element.children[0].textContent
+      }
+    }
   })
   .on('dragStart', function (item) {
     // Set a fixed widht/height to the dragged item
@@ -38,13 +47,13 @@ itemContainers.forEach(function (container) {
     // Just in case, let's refresh the dimensions of all items
     // in case dragging the item caused some other items to
     // be different size.
-    // XXX - don't think we need to do this.
+    // XXX - don't think we need to do this. Maybe only on unseated area.
     columnGrids.forEach(function (grid) {
       grid.refreshItems();
     });
   })
   .on('layoutStart', function () {
-    // Let's keep the board grid up to date with the
+    // Keep the board grid up to date with the
     // dimensions changes of column grids.
     boardGrid.refreshItems().layout();
   });
@@ -67,4 +76,9 @@ boardGrid = new Muuri('.board', {
   },
   dragReleaseDuration: 400,
   dragReleaseEasing: 'ease'
+});
+
+sort.addEventListener('click', function () {
+  grid.sort('id');
+  alert('sorted');
 });
