@@ -24,7 +24,6 @@ itemContainers.forEach(function (container) {
     dragReleaseEasing: 'ease',
     sortData: {
       id: function(item, element) {
-        alert('sort data');
         return element.children[0].textContent
       }
     }
@@ -80,5 +79,4 @@ boardGrid = new Muuri('.board', {
 
 sort.addEventListener('click', function () {
   grid.sort('id');
-  alert('sorted');
 });
