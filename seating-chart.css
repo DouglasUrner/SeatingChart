@@ -21,7 +21,7 @@ body {
 
 .unseated {
   width: 18%;
-  height: 600px;
+  min-height: 600px;
   float: left;
 }
 .seatmap {
@@ -48,6 +48,7 @@ body {
 .student-item {
   width: 90%;
   margin-bottom: 5px;
+  display: block;
 }
 
 /*
