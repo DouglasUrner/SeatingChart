@@ -20,8 +20,7 @@ body {
 }
 
 .unseated {
-  width: 18%;
-  min-height: 600px;
+  width: 100%;
   float: left;
 }
 .seatmap {
@@ -44,6 +43,11 @@ body {
 */
 .seating-chart {
   min-width: 1000px;
+}
+.left-sidebar {
+  width: 18%;
+  min-height: 600px;
+  float: left;
 }
 .student-item {
   width: 90%;
