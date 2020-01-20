@@ -35,6 +35,7 @@ body {
 .unseated {
   max-width: 18%;
   min-width: 18%;
+  min-height: 20px;
   float: left;
 }
 .seatmap {
