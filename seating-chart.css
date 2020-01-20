@@ -28,12 +28,13 @@ body {
 .page-header {
   width: 100%;
 }
-.buttons {
+.actions {
   width: 18%;
 }
 .info-area {}
 .unseated {
-  width: 18%;
+  max-width: 18%;
+  min-width: 18%;
   float: left;
 }
 .seatmap {
