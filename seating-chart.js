@@ -18,6 +18,10 @@ var seatmap = [];
 /**
  * Buttons
  */
+
+/**
+ * Clear the seatmap.
+ */
 var buttonClear = document.querySelector('.button-clear');
 buttonClear.addEventListener('click', function() {
   /**
@@ -33,27 +37,16 @@ buttonClear.addEventListener('click', function() {
   });
 });
 
+/**
+ * Randomly add the unseated students to the seatmap starting at the front
+ * of the room (lower right corner for now).
+ *
+ * TODO: allow the user to set a parameter to define the order in which seats
+ *       are assigned. For example: front, back, and randomly (leaving random
+ *       holes in the seatmap).
+ */
 var buttonRandom = document.querySelector('.button-random');
 buttonRandom.addEventListener('click', function() {
-  // /**
-  //  * shuffle() the unseated array, then send each item to the seatmap. Should
-  //  * check that the target is empty - maybe start with the first seat that
-  //  * should be filled (the front of the room?) and work towards the back.
-  //  */
-  // indexes = [];
-  // for (i = 0; i < unseated._items.length; i++) {
-  //   indexes.push(i);
-  // }
-  // randomIndexes = shuffle(indexes);
-  // count = 1;
-  // randomIndexes.forEach(function(index) {
-  //   console.log(unseated._items[index]);
-  //   console.log(seatmap[seatmap.length - count]);
-  //   // TODO: check that it's empty.
-  //   unseated.send(unseated._items[index],
-  //     seatmap[seatmap.length - count++], 0);
-  // });
-
   for (i = seatmap.length - 1; i >= 0; i--) {
     if (unseated._items.length > 0) {
       if (seatmap[i]._items.length == 0) {
@@ -68,40 +61,17 @@ buttonRandom.addEventListener('click', function() {
 });
 
 /**
- * Returns a random integer between min (inclusive) and max (inclusive).
+ * Return a random integer between min (inclusive) and max (inclusive).
  * The value is no lower than min (or the next integer greater than min
  * if min isn't an integer) and no greater than max (or the next integer
  * lower than max if max isn't an integer).
+ *
  * Using Math.round() will give you a non-uniform distribution!
  */
 function randomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-/**
- * [shuffle description]
- * @param  {[type]} array [description]
- * @return {[type]}       [description]
- */
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
 }
 
 var buttonSave = document.querySelector('.button-save');
