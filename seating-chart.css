@@ -9,6 +9,8 @@ body {
 }
 .seatmap {
   background-color: #CCC;
+  border-radius: 5px;
+  padding: 8px;
 }
 .seat {
   background-color: #DDD;
@@ -36,11 +38,13 @@ body {
   max-width: 18%;
   min-width: 18%;
   min-height: 20px;
+  //height: calc(96vh - 48px);
   float: left;
 }
 .seatmap {
   width: 80%;
   height: 600px;
+  //height: calc(96vh - 48px);
   margin-left: 2%;
   float: left;
 }

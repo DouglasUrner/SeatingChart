@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      * {
+        margin: 0 0 0 0;
+      }
+      .seating-chart {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        background-color: #123456;
+      }
+      .sidebar {
+        width: 18%;
+        height: 96vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      .seating-chart-buttons {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+      }
+      button {
+        border-radius: 8px;
+        margin: 4px;
+      }
+      button#save { background-color: #6D0; }
+      .unseated {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        height: 88vh;
+        background-color: #AAA;
+        border-radius: 8px;
+      }
+      .seatmap {
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+        height: 96vh;
+        background-color: #DDD;
+        border-radius: 8px;
+        margin-left: 1%;
+      }
+      .student-item {
+        width: calc(100% - 8px);
+        min-height: 4vh;
+        background-color: #654321;
+        color: white;
+        border-radius: 6px;
+        margin: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="seating-chart">
+      <div class="sidebar">
+        <div class="seating-chart-buttons">
+          <button type="button" name="random" id="random">Random</button>
+          <button type="button" name="clear" id="clear">Clear</button>
+          <button type="button" name="save" id="save">Save</button>
+        </div>
+        <div class="unseated">
+          <div class="student-item">A</div>
+          <div class="student-item">B</div>
+          <div class="student-item">C</div>
+          <div class="student-item">D</div>
+        </div>
+      </div>
+      <div class="seatmap">
+      </div>
+    </div>
+  </body>
+</html>
